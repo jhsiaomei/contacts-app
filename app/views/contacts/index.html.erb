@@ -1,6 +1,12 @@
 <h2>Address Book:</h2>
-<% @contact.each do |contact| %>
-  <p><strong>Name: </strong><%= contact.first_name %> <%=contact.last_name %></p>
-  <p><strong>Email Address: </strong><%= contact.email %></p>
-  <p><strong>Phone Number: </strong><%= contact.phone %></p>
-<% end %>
+<div>&nbsp</div>
+<div><%= link_to "Click here to add a new Contact", "/contacts/new" %></div>
+<div>&nbsp</div>
+<div>
+  <% @contact.each do |contact| %>
+    <p><strong>Name: </strong><a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%=contact.last_name %></a></p>
+    <p><strong>Email Address: </strong><%= contact.email %></p>
+    <p><strong>Phone Number: </strong><%= contact.phone %></p>
+    <div>&nbsp</div>
+  <% end %>
+</div>

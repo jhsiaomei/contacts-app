@@ -1,1 +1,22 @@
-edit.html.erb
+<h2>Please use the following form to update this Contact in your address book:</h2>
+<%= form_tag "/contacts/#{@contact.id}", method: :patch do %>
+  <div>
+    <%= label_tag :first_name %>
+    <%= text_field_tag :first_name, @contact.first_name %>
+  </div>
+   <div>
+    <%= label_tag :last_name %>
+    <%= text_field_tag :last_name, @contact.last_name %>
+  </div>
+   <div>
+    <%= label_tag :email %>
+    <%= text_field_tag :email, @contact.email %>
+  </div>
+   <div>
+    <%= label_tag :phone %>
+    <%= text_field_tag :phone, @contact.phone %>
+  </div>
+  <div>
+    <%= submit_tag 'Send' %>
+  </div>
+<% end %>

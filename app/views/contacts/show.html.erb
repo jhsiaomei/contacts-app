@@ -1,1 +1,7 @@
-show.html.erb
+<h2>Name: <%= @contact.first_name %> <%=@contact.last_name %></h2>
+<h4><strong>Email Address: </strong><%= @contact.email %></h4>
+<h4><strong>Phone Number: </strong><%= @contact.phone %></h4>
+<div>&nbsp</div>
+<p><%= link_to "Edit this Contact", "/contacts/#{@contact.id}/edit" %></p>
+<p><%= link_to "Delete this Contact", "/contacts/#{@contact.id}", method: :delete %></p>
+<p><%= link_to "Show all Contacts", "/contacts" %></p>
