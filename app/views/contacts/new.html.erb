@@ -1,22 +1,22 @@
-<h2>Please fill out the following form to add a new Contact to your address book</h2>
-<%= form_tag '/contacts', method: :post do %>
-  <div>
+<h2 align="center">Please fill out the following form to add a new Contact to your address book</h2>
+<%= form_tag "/contacts", method: :post do %>
+  <div class="form-group">
     <%= label_tag :first_name %>
-    <%= text_field_tag :first_name %>
+    <%= text_field_tag :first_name, nil, class: "form-control" %>
   </div>
-   <div>
+  <div class="form-group">
     <%= label_tag :last_name %>
-    <%= text_field_tag :last_name %>
+    <%= text_field_tag :last_name, nil, class: "form-control" %>
   </div>
-   <div>
+  <div class="form-group">
     <%= label_tag :email %>
-    <%= text_field_tag :email %>
+    <%= text_field_tag :email, nil, class: "form-control" %>
   </div>
-   <div>
+  <div class="form-group">
     <%= label_tag :phone %>
-    <%= text_field_tag :phone %>
+    <%= text_field_tag :phone, nil, class: "form-control" %>
   </div>
-  <div>
-    <%= submit_tag 'Send' %>
+  <div align="center">
+    <%= button_tag 'Send', class: "btn btn-default" %>
   </div>
 <% end %>
