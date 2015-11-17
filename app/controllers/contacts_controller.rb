@@ -1,18 +1,14 @@
 class ContactsController < ApplicationController
-  def home
-    @title = "Home"
-  end
-
-  def display_all_contacts
+  def index
     @title = "Address Book"
     @contact = Contact.all
   end
 
-  def add_contact_form
+  def new
     @title = "Add New Contact"
   end
 
-  def add_contact_confirmation
+  def create
     @title = "Add Contact Confirmation"
     @contact = Contact.create(
         first_name: params[:first_name],
@@ -20,5 +16,17 @@ class ContactsController < ApplicationController
         email: params[:email],
         phone: params[:phone]
       )
+  end
+
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
   end
 end
