@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
         email: params[:email],
         phone: params[:phone]
       )
-
+    flash[:success] = "Contact was successfully created!"
     redirect_to '/contacts'
   end
 
@@ -37,12 +37,14 @@ class ContactsController < ApplicationController
         email: params[:email],
         phone: params[:phone]
       )
-
+    flash[:success] = "Contact was successfully updated!"
     redirect_to '/contacts'
   end
 
   def destroy
     contact = Contact.find_by(id: params[:id])
     contact.destroy
+    flash[:danger] = "Contact was successfully deleted!"
+    redirect_to '/contacts'
   end
 end
