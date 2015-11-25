@@ -1,7 +1,12 @@
 class ContactsController < ApplicationController
   def index
     @title = "Address Book"
-    @contact = Contact.all
+    if user_signed_in?
+      @contact = Contact.where("user_id = ?", current_user.id)
+    else
+      @contact = Contact.where("user_id = ?", nil)
+      @message = "Please sign in to view Contacts!"
+    end
   end
 
   def new
@@ -14,7 +19,8 @@ class ContactsController < ApplicationController
         first_name: params[:first_name],
         last_name: params[:last_name],
         email: params[:email],
-        phone: params[:phone]
+        phone: params[:phone],
+        user_id: current_user.id
       )
     flash[:success] = "Contact was successfully created!"
     redirect_to '/contacts'

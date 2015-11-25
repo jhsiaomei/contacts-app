@@ -2,6 +2,7 @@
 <div>&nbsp</div>
 <div><%= link_to "Click here to add a new Contact", "/contacts/new" %></div>
 <div>&nbsp</div>
+<h3><%= @message %></h3>
 <div>
   <% @contact.each do |contact| %>
     <p><strong>Name: </strong><a href="/contacts/<%= contact.id %>"><%= contact.full_name %></a></p>
