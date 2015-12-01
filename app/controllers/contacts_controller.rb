@@ -11,6 +11,9 @@ class ContactsController < ApplicationController
 
   def new
     @title = "Add New Contact"
+    if user_signed_in? == false
+      redirect_to '/users/sign_in'
+    end
   end
 
   def create

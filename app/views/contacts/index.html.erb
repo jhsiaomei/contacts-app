@@ -1,9 +1,5 @@
 <h2>Address Book:</h2>
 <div>&nbsp</div>
-<% if user_signed_in? %>
-  <div><%= link_to "Click here to add a new Contact", "/contacts/new" %></div>
-<% end %>
-<div>&nbsp</div>
 <h3><%= @message %></h3>
 <div>
   <% @contact.each do |contact| %>
