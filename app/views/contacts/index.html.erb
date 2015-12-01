@@ -1,11 +1,12 @@
 <h2>Address Book:</h2>
-<div>&nbsp</div>
 <h3><%= @message %></h3>
+<div>&nbsp</div>
 <div>
   <% @contact.each do |contact| %>
     <p><strong>Name: </strong><a href="/contacts/<%= contact.id %>"><%= contact.full_name %></a></p>
     <p><strong>Email Address: </strong><%= contact.email %></p>
     <p><strong>Phone Number: </strong><%= contact.japanese_number %></p>
+    <p><strong>Created by: </strong><%= contact.user.id %></p>
     <p>Created on: <%= contact.display_created_time %></p>
     <div>&nbsp</div>
   <% end %>

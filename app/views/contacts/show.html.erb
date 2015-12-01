@@ -1,6 +1,11 @@
 <h2>Name: <%= @contact.full_name %></h2>
 <h4><strong>Email Address: </strong><%= @contact.email %></h4>
 <h4><strong>Phone Number: </strong><%= @contact.japanese_number %></h4>
+<h4><strong>Groups: </strong>
+  <% @contact.groups.each do |group| %>
+    <%= group.name %>
+  <% end %>
+</h4>
 <p>Created on: <%= @contact.display_created_time %></p>
 
 <div>&nbsp</div>

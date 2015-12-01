@@ -28,6 +28,19 @@
           <% else %>
             <li><a href="/users/sign_in">Sign In</a></li>
           <% end %>
+          <% if user_signed_in? %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Groups<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/contacts?group=5">Disney Cartoons</a></li>
+                <li><a href="/contacts?group=2">Original Disney</a></li>
+                <li><a href="/contacts?group=1">Lion King</a></li>
+                <li><a href="/contacts?group=3">Bambi</a></li>
+                <li><a href="/contacts?group=4">Aladdin</a></li>
+                <li><a href="/contacts?group=6">Non-Disney</a></li>
+              </ul>
+            </li>
+          <% end %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
             <ul class="dropdown-menu">

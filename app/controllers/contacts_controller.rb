@@ -7,6 +7,10 @@ class ContactsController < ApplicationController
       @contact = Contact.where("user_id = ?", nil)
       @message = "Please sign in to view Contacts!"
     end
+    if params[:group]
+      @contact = Group.find_by("id = ?", params[:group]).contacts.where("user_id = ?", current_user.id)
+      @message = Group.find_by("id = ?", params[:group]).name
+    end
   end
 
   def new
@@ -31,6 +35,7 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find_by(id: params[:id])
+
 
   end
 
